@@ -1,0 +1,14 @@
+= Module 01: Git/Github 개요
+
+link:./00_introduction.adoc[Module 01: Git/Github 개요]
+
+* link:./01-0_cm_vc.adoc[Chapter 1. 형상 관리와 버전 관리]
+** link:./01-1_configuration_management.adoc[형상 관리]
+** link:./01-2_version_control.adoc[버전 관리]
+** link:./01-3_cvcs_vs_dvcs.adoc[형상 관리와 버전 관리]
+* link:./02-0_git_github.adoc[Git과 Github]
+** link:./02-1_git.adoc[Git]
+** link:./02-2_git_service.adoc[Git 서비]
+** link:./02-3_github.adoc[GitHub]
+* link:./02-lab01-1.adoc[Lab 1: GitHub 계정 생성]
+* link:./02-lab01-2.adoc[Lab 1-2: 개발 소프트웨어 설치]
