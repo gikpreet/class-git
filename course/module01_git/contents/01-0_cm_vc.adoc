@@ -1,0 +1,17 @@
+= Chapter 1. 형상 관리와 버전 관리
+
+개발과 시스템 운영등 모든 프로젝트에는 프로젝트나 시스템의 전체적인 일관성과 무결성을 유지하기 위한 정책과 도구가 필요합니다.
+
+프로젝트나 시스템의 전체적인 일관성과 무결성을 유지하기 위한 총제적인 관리 활동을 형상 관리(Configuration Management, CM)라고 하며, 형상 관리를 위한 여러가지 활동 중 기록과 추적에 직접적으로 기여하는 구체적인 기술적 수단을 버전 관리(Version Control, VC)이라고 합니다.
+
+이 단원에서는 형상 관리와 버전 관리에 대해 알아봅니다.
+
+== Table of Contents
+
+1. link:./01-1_configuration_management.adoc[형상 관리]
+2. link:./01-2_version_control.adoc[버전 관리]
+3. link:./01-3_cvcs_vs_dvcs.adoc[형상 관리와 버전 관리]
+
+---
+
+link:./00_introduction.adoc[Module 01: Git/Github 개요] | link:./01-1_configuration_management.adoc[다음: 형상 관리]

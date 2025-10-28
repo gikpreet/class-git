@@ -1,0 +1,48 @@
+= Lab 1-2: 개발 소프트웨어 설치
+
+이 연습에서는 GitHub 실습을 위한 개발 환경을 구성합니다. 이 과정에서는 개발 환경으로 Visual Studio Code를 사용합니다.
+
+== 연습 1: Visual Studio Code 설치
+
+=== Windows에서 Visual Studio Code 설치
+
+Windows 11에서 Visual Studio Code를 설치하기 위해, 아래에 링크된 문서의 절차를 따릅니다.
+
+https://github.com/gikpreet/class-environment_settings/blob/main/11_dev_tools/01_vscode/01_visualstudio_code_windows11.adoc[Windows 11에서 Visual Studio Code 설치]
+
+=== macOS에서 Visual Studio Code 설치
+
+macOS에서 Visual Studio Code를 설치하기 위해, 아래에 링크된 문서의 절차를 따릅니다.
+
+https://github.com/gikpreet/class-environment_settings/blob/main/11_dev_tools/01_vscode/02_visualstudio_code_macos.adoc[macOS에서 Visual Studio Code 설치]
+
+=== Ubuntu에서 Visual Studio Code 설치
+
+Ubuntu에서 Visual Studio Code를 설치하기 위해, 아래에 리읔된 문서의 절차를 따릅니다.
+
+https://github.com/gikpreet/class-environment_settings/blob/main/11_dev_tools/01_vscode/03_visualstudio_code_ubuntu.adoc[Ubuntu에서 Visual Studio Code 설치]
+
+
+== 연습 2: Git 설치
+
+=== Windows에서 Git 설치
+
+Windows 11에서 Git을 설치하기 위해, 아래에 링크된 문서의 절차를 따릅니다.
+
+https://github.com/gikpreet/class-environment_settings/blob/main/11_dev_tools/02_git/01_git_windows11.adoc[Windows 11에서 Git 설치]
+
+=== macOS에서 Git 설치
+
+macOS에서 Git을 설치하기 위해, 아래에 링크된 문서의 절차를 따릅니다.
+
+https://github.com/gikpreet/class-environment_settings/blob/main/11_dev_tools/02_git/02_git_macos.adoc[macOS에서 Git 설치]
+
+=== Ubuntu에서 Git 설치
+
+Ubuntu에서 Git을 설치하기 위해, 아래에 링크된 문서의 절차를 따릅니다.
+
+https://github.com/gikpreet/class-environment_settings/blob/main/11_dev_tools/02_git/03_git_ubuntu.adoc[Ubuntu에서 Git 설치]
+
+---
+
+link:./02-lab01-1.adoc[이전: Lab 1: GitHub 계정 생성]

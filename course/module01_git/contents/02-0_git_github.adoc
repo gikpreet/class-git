@@ -1,0 +1,15 @@
+= Git과 Github
+
+Git은 현재 가장 많이 사용되는 분산 버전 관리 시스템이며, Github은 Git 저장소를 위한 웹 기반 호스팅 서비스입니다. 
+
+이 단원에서는 Git과 Github에 대해 알아봅니다.
+
+== Table of Contents
+
+1. link:./02-1_git.adoc[Git]
+2. link:./02-2_git_service.adoc[Git 서비스]
+3. link:./02-3_github.adoc[GitHub]
+
+---
+
+link:./01-3_cvcs_vs_dvcs.adoc[이전: 형상 관리와 버전 관리] | link:./02-1_git.adoc[다음: Git]
