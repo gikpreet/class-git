@@ -1,0 +1,78 @@
+= 기본 환경 설정
+
+Git 환경 설정은 Git의 작동 방식을 사용자의 환경과 선호도에 맞추어 제어하는 기능입니다. 이를 통해 Git을 사용하는 사용자 정보, 파일 처리 방식, 편집 도구 등을 정의합니다.
+
+== 설정 계층 구조
+
+Git 설정은 세 가지 범위로 나뉘며, 좁은 범위가 넓은 범위의 설정을 덮어씁니다.
+
+* **System**: 컴퓨터 전체 사용자에게 적용되며, 거의 사용하지 않습니다.
+* **Global**: 현재 로그인한 사용자의 모든 프로젝트에 적용되며, 기본 값을 설정하는데 사용합니다.
+* **Local**: 특정 프로젝트(저장소)에만 적용(특수 상황용)
+
+== 설정 파일의 위치
+
+설정 명령어(`git config`)를 입력하면 실제로 컴퓨터 내의 특정 텍스트 파일에 내용이 저장됩니다
+
+* Global 설정: 사용자 홈 디렉토리의 .gitconfig 파일에 저장됩니다.
+** 경로 예시: `c:\users\사용자명\.gitconfig`
+* Local 설정: 해당 프로젝트 폴더 내의 .git/config 파일
+** 이 파일은 .git 폴더를 지우면 함께 삭제됩니다.
+
+== 주요 설정 항목
+
+Git 사용을 위해 설정하는 주요 항목들은 크게 4가지 카테고리로 나뉩니다.
+
+1. **Identity**: 협업 시 누가 코드를 수정했는지 식별하기 위한 필수 정보입니다.
++
+--
+* `user.name`: 커밋에 기록될 이름
+* `user.email`: 커밋에 기록될 이메일
+
+아래 명령은 사용자 이름으로 gikpreet를, email로 gik_kim@hotmail.com을 Global 레벨로 지정합니다.
+----
+git config --global user.name "gikpreet"
+git config --global user.email "gik_kim@hotmail.com"
+----
+--
+2. 편집 및 도구(Core Editor): Git이 메시지 입력이나 충돌 해결을 위해 외부 프로그램을 호출할 때 어떤 프로그램을 쓸지 정합니다.
++
+--
+* `core.editor` _[editor_name] [option]_
+
+아래 명령은 Visual Studio Code를 기본 에디터로 지정합니다.
+----
+git config --global core.editor code --wait
+----
+--
+3. 서식 및 호환성(Formatting): 운영체제 간의 줄바꿈 문자 차이(Windows vs. macOS)를 처리하는 방식입니다.
++
+--
+* `core.autocrlf` : `true` (Windows) 또는 `input` (macOS)
+
+아래 명령은 Windows 운영체제에서 올바르게 동작하도록 가져올 때는 LF로 변환하여 가져오고, 저장할 때는 Windows 방식인 CRLF로 저장합니다.
+----
+git config --global core.autocrlf true
+----
+--
+
+4. 기본 브랜치 이름 변경
++
+과거에는 기본 브랜치 이름이 `master` 였으나, 최근에는 main을 표준으로 사용하는 추세입니다. 새 저장소를 만들 떄 자동으로 `main` 브랜치가 생성되도록 설정합니다.
++
+--
+* `init.defaultBranch` [branch_name]
+
+아래 명령은 기본 브랜치를 main으로 지정합니다.
+----
+git config --global defaultBranch main
+----
+--
+
+== 설정 확인
+
+아래 명령을 실행하여 지정된 Git 설정들을 확인할 수 있습니다.
+
+----
+git config --global --list
+----
