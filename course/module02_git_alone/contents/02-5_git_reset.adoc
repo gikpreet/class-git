@@ -1,0 +1,25 @@
+= git reset과 git revert
+
+Git에서 commit을 되돌리는 방법은 크게 두 가지가 있습니다. 로컬에 저장된 commit을 되돌리느냐, 원격 저장소에 저장된 commit을 되돌리느냐 하는 것입니다. 
+
+`git reset` 명령은 로컬에 저장된 commit을 바로잡는데 사용됩니다. `git reverse` 명령은 모듈 3에서 알아봅니다.
+
+== 'git reset' 명령
+
+아직 원격 저장소(GitHib 등)에 푸시(Push)하지 않고 로컬 저장소에만 변경 내용이 저장된 상태에서, commit을 바로잡을 때 사용합니다. commit 시점 이전으로 돌아가는 것과 같아서, 돌아간 시점 이후의 commit 기록은 사라집니다.
+
+기본 사용법은 아래와 같습니다.
+
+----
+git reset [option] HEAD-<현재 시점에서 취소할 commit 개수>
+----
+
+또는
+
+----
+git reset <log의 커밋 7자리>
+----
+
+
+
+

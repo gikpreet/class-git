@@ -1,0 +1,199 @@
+= Lab 2: 기본적인 Git 사용
+
+이 연습에서는, 팀 단위 개발이 아닌 혼자서 개발하는 작업 환경을 가정하고, 기본적인 Git 사용법을 학습합니다. 이 연습을 수행하려면 link:./01-lab01-1.adoc[Lab 1]에서 실습환 환경이 필요합니다.
+
+== 파일을 만들고 로컬 저장소에 저장
+
+여기에서는 파일을 만들고 원격 저장소에 저장합니다. 연습은 아래와 같은 절차로 수행됩니다.
+
+1. 파일 생성
+2. 생성된 파일을 `git add` 명령을 사용하여 스테이징 영역으로 업로드
+3.  git commit 명령을 사용하여 생성된 스테이징 영역의 파일을 저장
+4. 저장된(commit 된) 파일을 원격 저장소에 push
+
+아래 절차에 따릅니다.
+
+1. 터미널을 열고 Lab 1에서 GitHub 리포지토리에서 Clone한 리포지토리로 이동합니다. 
+2. 어래 명령을 실행하여 상태를 확인합니다. 
++
+----
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+----
+3. 아래 명령을 수행하여 Hello.java 파일을 작성합니다.
++
+----
+echo import java.util.*; > Hello.java
+----
+4. 아래 명령을 실행하여 생성된 파일에 대한 git 상태를 확인합니다.
++
+----
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Hello.java
+
+nothing added to commit but untracked files present (use "git add" to track)
+----
+5. 아래 명령을 실행하여 생성된 Hello.java 파일을 스테이징 영역으로 올립니다.
++
+----
+$ git add Hello.java
+----
+6. 아래 명령을 실행하여 git 상태를 확인합니다.
++
+----
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   Hello.java
+----
+7. 아래 명령을 실행하여 스테이징 영역의 Hello.java 파일을 로컬 Git 저장소에 저장합니다.
++
+----
+$ git commit -m "Hello.java 파일 생성"
+[main 920cda5] Hello.java 파일 생성
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Hello.java
+----
+8. 아래 명령을 실행하여 git 상태를 확인합니다.
++
+----
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+----
+
+9. 아래 명령을 실행하여 history를 확인합니다.
++
+----
+$ git log
+commit 920cda5d4db4b918da218fdcaa7246284cf49d63 (HEAD -> main)
+Author: gikpreet <gik_kim@hotmail.com>
+Date:   Thu Dec 11 12:01:26 2025 +0900
+
+    Hello.java 파일 생성
+
+commit 2b1f84f34e8b30fb6aefab6e1e45e83ccb32a74f (origin/main, origin/HEAD)
+Author: Sanghoon Kim <gik_kim@hotmail.com>
+Date:   Thu Dec 4 11:01:27 2025 +0900
+
+    Initial commit
+----
+
+== 파일을 수정하고 변경 내용 저장
+1. 아래 명령을 실행하여 Hello.java 파일을 에디터에서 엽니다.
++
+* Windows
++
+----
+notepad Hello.java
+----
++
+* macOS 또는 Linux
++
+----
+vi Hello.java
+----
+또는
++
+----
+nano Hello.java
+----
+
+2. 에디터에서 Hello.java 파일을 아래와 같이 수정합니다.
++
+[source, java]
+----
+import java.util.*;
+
+public class Hello {
+	public static void main(String[] args) {
+		System.out.println("Hello, World!");
+	}
+}
+----
+3. 수정한 파일을 저장합니다.
+4. 아래 명령을 실행하여 현재 상태를 확인합니다.
++
+----
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Hello.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+----
+5. 아래 명령을 실행하여 수정된 Hello.java 파일을 스테이징 영역에 추가합니다. 아래 명령은 워크스페이스의 모든 파일을 스테이징 영역에 추가합니다.
++
+----
+$ git add .
+----
+6. 아래 명령을 실행하여 현재 상태를 확인합니다.
++
+----
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   Hello.java
+----
+7. 아래 명령을 실행하여 변경 내용을 로컬 저장소에 저장(commit) 합니다.
++
+----
+$ git commit -m "main 메소드 추가"
+[main dbedb5e] 메인 메소드 추가
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+----
+8. 아래 명령을 실행하여 현재 상태를 확인합니다.
++
+----
+$ git status
+On branch main
+Your branch is ahead of 'origin/main' by 2 commits.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+----
+9. 아래 명령을 실행하여 history를 확인합니다.
++
+----
+$ git log
+commit dbedb5eccacbc237a341300b3b2386d281f2125c (HEAD -> main)
+Author: gikpreet <gik_kim@hotmail.com>
+Date:   Mon Dec 15 10:36:05 2025 +0900
+
+    메인 메소드 추가
+
+commit 920cda5d4db4b918da218fdcaa7246284cf49d63
+Author: gikpreet <gik_kim@hotmail.com>
+Date:   Thu Dec 11 12:01:26 2025 +0900
+
+    Hello.java 파일 생성
+
+commit 2b1f84f34e8b30fb6aefab6e1e45e83ccb32a74f (origin/main, origin/HEAD)
+Author: Sanghoon Kim <gik_kim@hotmail.com>
+Date:   Thu Dec 4 11:01:27 2025 +0900
+
+    Initial commit
+----

@@ -1,0 +1,67 @@
+= git status 명령
+:sectnums:
+
+`git status` 는 Git에서 가장 자주, 그리고 습관적으로 사용해야 하는 명령어입니다.
+
+이 명령어는 현재 내 프로젝트의 "건강 검진표" 또는 **"네비게이션 현 위치"**와 같습니다. 내가 지금 어떤 브랜치에 있는지, 어떤 파일이 수정되었는지, 무엇이 저장(커밋)될 준비가 되었는지를 한눈에 보여줍니다.
+
+== 사용 할 때
+
+명령어를 입력하는 **모든 순간에** 확인하는 것이 좋습니다.
+
+1. 파일의 수정 후 Git이 변경사항을 감지했는지 여부를 확인합니다.
+2. `git add` 명령을 수행한 후, 파일이 스테이징 영역에 추가되었는지 여부를 확인합니다.
+3. `git commit` 직전에, commit 대상 모든 파일이 스테이징 되어 있는지 확인합니다.
+4. `git commit` 직후에, 저장이 제대로 되었는지 확인합니다.
+
+== 출력 결과
+
+터미널에 git status 명령을 입력했을 때 나오는 메시지는 크게 3부분으로 나뉩니다. 색깔(빨강/초록)로 구분하면 이해하기 쉽습니다.
+
+=== 현재 위치
+
+가장 윗줄에 표시됩니다.
+
+----
+On branch main
+Your branch is up to date with 'origin/main'.
+----
+
+* **On branch main**: 현재 'main' 브랜치에서 작업 중이라는 뜻입니다.
+* **Up to date**: 원격 저장소(GitHub)와 비교했을 때 최신 상태라는 뜻입니다. (만약 내가 커밋을 더 많이 했다면 ahead, 뒤쳐져 있다면 behind라고 뜹니다.)
+
+=== 스테이징 된 변경 사항 - 녹색으로 표시
+
+----
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+    modified:   index.html
+    new file:   style.css
+----
+
+* `git add` 명령으로 **스테이징 영역**에 올린 파일들입니다.
+* `git commit` 을 하면 이 파일들만 저장됩니다.
+
+=== 스테이징 않은 변경 사항 - 빨간색으로 표시
+
+----
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+    modified:   script.js
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+    logo.png
+----
+
+== 가장 이상적인 형태
+
+모든 작업을 마치고, 커밋까지 완료한 뒤 git status 명령을 실행하면 아래와 같이 표시됩니다.
+
+----
+nothing to commit, working tree clean
+----
+
+위 메시지는 작업 디렉토리가 깨끗하다, 즉 수정하고 나서 저장하지 않은 파일이 하나도 없다는 뜻입니다.
+
+== 옵션

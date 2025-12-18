@@ -1,3 +1,4 @@
 = Git
 
 1. link:./course/module01_git/contents/00_introduction.adoc[Module 01: Git/Github 개요]
+2. link:./course/module02_git_alone/contents/00_introduction.adoc[Module 02: Git 버전 관리 기본]
